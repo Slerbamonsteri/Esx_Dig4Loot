@@ -24,6 +24,8 @@ Citizen.CreateThread(function()
     SetBlipSprite(area_blip, 10)
 end)
 
+local kaiva
+
 RegisterNetEvent("esx_dig:kaiva")
 AddEventHandler("esx_dig:kaiva", function()
     local pos = GetEntityCoords(PlayerPedId())
