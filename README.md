@@ -4,7 +4,7 @@ Hi!
 
 Here's a Dig&Wash script for ESX based servers. 
 
-Basically what this script does is that you dig in a preset area. 
+Basically what this script does is that it allows you to dig in a preset area. 
 
 Digging gives you item (mud / gravel or whatever), and there is also possibility of getting random items whilst doing it.
 
