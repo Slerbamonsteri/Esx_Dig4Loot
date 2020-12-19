@@ -199,4 +199,4 @@ end)
 			ClearPedTasksImmediately(ped)
 			TriggerServerEvent('huuhdo:reward')
 		end
-end
+end)
