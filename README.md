@@ -18,7 +18,7 @@ Panning the "Defaultitem" you got from digging gives you randomized items, or yo
 I was using Esx_digitem (https://github.com/minobear/esx_digitem) for a while, but there were too many exploits that caused some major problems for me and my staff.
 
 Thus I remade it and created this panning -feature to extend it as a minijob/hobby
-
+########################################################################################
 USAGE:(also added some instructions in server.lua)
 
 Create items in database
@@ -32,7 +32,7 @@ Spade
 Bowl
 
 You need to change those item entries in server.lua, shouldn't be that hard... 
-
+#########################################################################################
 I'm fairly sure i have covered all possible exploits so it should be fairly safe to use, i recommend making logs though, just incase.
 Also I'm aware that the files are messy af, but it works nonetheless, and im satisfied with it taking in consideration my .lua skills at the time.
 I'd appreciate if you wanted to clean it up and optimize it even further. 
