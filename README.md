@@ -35,5 +35,7 @@ Showcase: https://www.youtube.com/watch?v=J5SkW3bgE38
 Esx_Dig4Loot was made and modified from:
 
 https://github.com/r3ps4J/r3_prospecting
+
 https://github.com/minobear/esx_digitem
+
 https://forum.cfx.re/t/release-esx-fishing-at-del-perro-pier-recreational-with-license/92894
