@@ -55,18 +55,16 @@ RegisterServerEvent('huuhdo:reward')
 AddEventHandler('huuhdo:reward', function(count)
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source) 
-	local tsekki = xPlayer.getInventoryItem('Defaultitem').count
-	local rmaara
+	local tsekki = xPlayer.getInventoryItem('Defaultitem')
 	local lootti = math.random(1,512) -- *
 	local maara = math.random(1,4) -- *
+	local maara2 = math.random(2,4) -- adjust should you want to buff more better droptable 
 	
-	
-	if tsekki >= 6 then
-		rmaara = math.random(1,6)
-		xPlayer.removeInventoryItem('Defaultitem', rmaara)
+	if tsekki.count >= 6 then --Better droptable if washing 6x -defaultitem
+		xPlayer.removeInventoryItem('Defaultitem', 6)
 		
 		if lootti >= 1 and lootti <= 160 then
-			xPlayer.addInventoryItem('Extraitem', maara)
+			xPlayer.addInventoryItem('Extraitem', maara2)
 			TriggerClientEvent('esx:showNotification', xPlayer.source, ('Succesfully panned, you got: ~y~Extraitem'))
 		elseif lootti >= 161 and lootti <=162 then
 			xPlayer.addInventoryItem('Extraitem', 1)
@@ -75,15 +73,15 @@ AddEventHandler('huuhdo:reward', function(count)
 			xPlayer.addInventoryItem('Extraitem', 1)
 			TriggerClientEvent('esx:showNotification', xPlayer.source, ('Succesfully panned, you got: ~y~ Extraitem'))
 		elseif lootti >= 280 and lootti <= 340 then
-			xPlayer.addMoney(math.random(69,160))
+			xPlayer.addMoney(math.random(240,500))
 			TriggerClientEvent('esx:showNotification', xPlayer.source, ('Succesfully panned, you got: ~g~ Coins'))
 		else
 			TriggerClientEvent('esx:showNotification', xPlayer.source, ('You dropped your bowl, you idiot sandwich... ~n~ You got ~r~nothing...'))
 		end
 		
-	elseif tsekki >= 0 then
-		rmaara = math.random(1, tsekki)
-		xPlayer.removeInventoryItem('Defaultitem', rmaara)
+	elseif tsekki.count >= 0 then  ---Worse droptable when washing <6 "Defaultitem"
+		tsekki = math.random(1, tsekki.count)
+		xPlayer.removeInventoryItem('Defaultitem', tsekki)
 		
 		if lootti >= 1 and lootti <= 160 then
 			xPlayer.addInventoryItem('Extraitem', maara)
