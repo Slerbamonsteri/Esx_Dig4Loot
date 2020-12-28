@@ -80,8 +80,8 @@ AddEventHandler('huuhdo:reward', function(count)
 		end
 		
 	elseif tsekki.count >= 0 then  ---Worse droptable when washing <6 "Defaultitem"
-		tsekki = math.random(1, tsekki.count)
-		xPlayer.removeInventoryItem('Defaultitem', tsekki)
+		tsekki2 = math.random(1, tsekki.count)
+		xPlayer.removeInventoryItem('Defaultitem', tsekki2)
 		
 		if lootti >= 1 and lootti <= 160 then
 			xPlayer.addInventoryItem('Extraitem', maara)
