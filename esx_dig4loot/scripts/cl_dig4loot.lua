@@ -37,8 +37,13 @@ AddEventHandler("esx_dig:kaiva", function()
 			plsdonthurt()
 			TaskStartScenarioInPlace(pelaaja, "WORLD_HUMAN_GARDENER_PLANT", 0, true)
 			Citizen.Wait(10000)
-			ClearPedTasksImmediately(pelaaja)
+			if IsPedUsingScenario(pelaaja, "WORLD_HUMAN_GARDENER_PLANT") then
 			TriggerServerEvent("esx_dig:reward")
+			ClearPedTasksImmediately(pelaaja)
+			else
+			ESX.ShowNotification('~r~Cheater, Cheater', true, true, 70)
+			ClearPedTasksImmediately(pelaaja)
+			end
 		else
 			ESX.ShowNotification('You can not dig ~r~in vehicle', true, true, 70)
 		end
@@ -194,9 +199,16 @@ end)
 			TaskStartScenarioInPlace(ped, "WORLD_HUMAN_BUM_WASH", 0, false)
 			AttachEntityToEntity(proppi, ped, GetPedBoneIndex(ped, 60309), 0.129, 0.14, 0.13, 270.0, 180.0, 300.0, true, true, false, true, 1, true)
 			Citizen.Wait(10000)
+			if IsPedUsingScenario(ped, "WORLD_HUMAN_BUM_WASH") then
 			ishuuhdo = false
 			DeleteEntity(proppi)
 			ClearPedTasksImmediately(ped)
 			TriggerServerEvent('huuhdo:reward')
+			else
+			ESX.ShowNotification('~r~Cheater, Cheater.')
+			ishuuhdo = false
+			DeleteEntity(proppi)
+			ClearPedTasksImmediately(ped)
+			end
 		end
 end)
