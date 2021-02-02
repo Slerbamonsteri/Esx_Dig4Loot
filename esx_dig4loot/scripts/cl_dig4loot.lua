@@ -34,6 +34,7 @@ AddEventHandler("esx_dig:kaiva", function()
 
 	if dist < area_size then
 		if not IsPedInAnyVehicle(PlayerPedId()) then
+			ESX.UI.Menu.CloseAll()
 			plsdonthurt()
 			TaskStartScenarioInPlace(pelaaja, "WORLD_HUMAN_GARDENER_PLANT", 0, true)
 			Citizen.Wait(10000)
